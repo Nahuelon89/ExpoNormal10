@@ -1,6 +1,6 @@
 <div class="navbar navbar-default navbar-fixed-bottom" style="background-color: #000080;border-color: #000080">
     <div class="container">
-      <p  style=" text-align:center;margin-top: 15px;color:white"> © 2018 - Diseño Y Programacion Web: <a style="color:#f8b;font-weight: 900" href='https://santiagourdaneta.com.ve'>Santiago Urdaneta</a>
+      <p  style=" text-align:center;margin-top: 15px;color:white"> © 2023 - "Diseño Y Programacion Web": <a style="color:#f8b;font-weight: 900" >Normal 10</a>
       </p>
    </div>
 </div>

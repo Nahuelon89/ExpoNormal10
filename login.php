@@ -39,7 +39,7 @@ if ($login->isUserLoggedIn() == true) {
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <!-- CSS  -->
    <link href="css/login.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-   	<link rel=icon href='img/avatarr.png' sizes="32x32" type="image/png">
+   	<link rel=icon href='img/1516640081_avatarr.jpg' sizes="32x32" type="image/png">
 </head>
 <body>
  <div class="container">
@@ -48,7 +48,7 @@ if ($login->isUserLoggedIn() == true) {
   <h2 style="color: black;font-size: 16px"><?php echo $h2; ?></h2>
  	</div>
         <div class="card card-container">
-            <img id="profile-img" class="profile-img-card" src="img/avatarr.png" />
+            <img id="profile-img" class="profile-img-card" src="img/1697597470_1516640081_avatarr.jpg" />
             <p id="profile-name" class="profile-name-card"></p>
             <form method="post" accept-charset="utf-8" action="login.php" name="loginform" autocomplete="off" role="form" class="form-signin">
 			<?php
