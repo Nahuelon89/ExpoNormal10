@@ -65,8 +65,11 @@ class HTML2PDF_locale
         $handle = fopen($file, 'r');
         while (!feof($handle)) {
             $line = fgetcsv($handle);
-            if (is_countable($line) && count($line)!=2) continue;
-            self::$_list[trim($line[0])] = trim($line[1]);
+            if ($line !== false){
+                if (is_countable($line) && count($line)!=2) continue;
+                self::$_list[trim($line[0])] = trim($line[1]);
+            }
+            
         }
         fclose($handle);
     }
