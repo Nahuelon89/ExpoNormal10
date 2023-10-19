@@ -26,6 +26,16 @@
 				</div>
 			  </div>
 			  <div class="form-group">
+				<label for="rol" class="col-sm-3 control-label">Rol</label>
+				<div class="col-sm-8">
+				 <select class="form-control" id="rol" name="rol" required>
+					<option value=""selected>-- Selecciona rol --</option>
+					<option value="admin" >Administrador</option>
+					<option value="user">Usuario</option>
+				  </select>
+				</div>
+			  </div>
+			  <div class="form-group">
 				<label for="user_name" class="col-sm-3 control-label">Usuario</label>
 				<div class="col-sm-8">
 				  <input type="text" class="form-control" id="user_name" name="user_name" placeholder="Usuario" pattern="[a-zA-Z0-9]{2,64}" title="Nombre de usuario ( sólo letras y números, 2-64 caracteres)"required>
