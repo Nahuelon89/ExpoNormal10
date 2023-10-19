@@ -84,8 +84,8 @@
 					<th>Nombres</th>
 					<th>Usuario</th>
 					<th>Email</th>
-					<th>Rol</th>
 					<th>Agregado</th>
+					<th>Rol</th>
 					<th><span class="pull-right">Acciones</span></th>
 					
 				</tr>
@@ -93,27 +93,26 @@
 				while ($row=mysqli_fetch_array($query)){
 						$user_id=$row['user_id'];
 						$fullname=$row['firstname']." ".$row["lastname"];
-						$rol=$row['rol'];
 						$user_name=$row['user_name'];
 						$user_email=$row['user_email'];
 						$date_added= date('d/m/Y', strtotime($row['date_added']));
-						
+						$rol=$row['rol'];
 					?>
 					
 					<input type="hidden" value="<?php echo $row['firstname'];?>" id="nombres<?php echo $user_id;?>">
 					<input type="hidden" value="<?php echo $row['lastname'];?>" id="apellidos<?php echo $user_id;?>">
-					<input type="hidden" value="<?php echo $row['rol'];?>" id="rol<?php echo $user_id;?>">
 					<input type="hidden" value="<?php echo $user_name;?>" id="usuario<?php echo $user_id;?>">
 					<input type="hidden" value="<?php echo $user_email;?>" id="email<?php echo $user_id;?>">
+					<input type="hidden" value="<?php echo $row['rol'];?>" id="rol<?php echo $user_id;?>">
 				
 					<tr>
 						<td><?php echo $user_id; ?></td>
 						<td><?php echo $fullname; ?></td>
-						
 						<td ><?php echo $user_name; ?></td>
 						<td ><?php echo $user_email; ?></td>
-						<td><?php echo $rol; ?></td>
 						<td><?php echo $date_added;?></td>
+						<td><?php echo $rol; ?></td>
+						
 						
 					<td ><span class="pull-right">
 					<a href="#" class='btn btn-default' title='Editar usuario' onclick="obtener_datos('<?php echo $user_id;?>');" data-toggle="modal" data-target="#myModal2"><i class="glyphicon glyphicon-edit"></i></a> 

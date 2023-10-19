@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-10-2023 a las 07:33:05
+-- Tiempo de generación: 19-10-2023 a las 22:55:39
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -43,8 +43,10 @@ CREATE TABLE `clientes` (
 
 INSERT INTO `clientes` (`id_cliente`, `nombre_cliente`, `telefono_cliente`, `email_cliente`, `direccion_cliente`, `status_cliente`, `date_added`) VALUES
 (2, 'Gabriela Leiva', '3764594935', 'gabvl@gmail.com', 'Moritan 2311', 1, '2023-10-18 04:43:32'),
-(3, 'Aires Facundo', '3764525878', 'aires@cuelao.com', 'zona roja', 1, '2023-10-18 04:48:11'),
-(4, 'Leandro Villalba', '3765230488', 'lean@villalba.com', 'su casa', 1, '2023-10-18 05:21:34');
+(3, 'Aires Facundo', '3764525878', 'aires@culeao.com', 'zona roja', 1, '2023-10-18 04:48:11'),
+(4, 'Leandro Villalba', '3765230488', 'lean@villalba.com', 'su casa', 1, '2023-10-18 05:21:34'),
+(5, 'Mostrador', '3764123467', 'mostrador@mostrador.com.ar', 'local 1', 1, '2023-10-18 23:43:51'),
+(6, 'fausto', '34975', 'fautsot@gmail.com', 'casa', 1, '2023-10-19 00:36:49');
 
 -- --------------------------------------------------------
 
@@ -103,7 +105,19 @@ INSERT INTO `detalle_factura` (`id_detalle`, `numero_factura`, `id_producto`, `c
 (19, 6, 8, 1, 100),
 (20, 7, 4, 1, 1000),
 (21, 7, 8, 1, 100),
-(22, 7, 6, 1, 30);
+(22, 7, 6, 1, 30),
+(23, 8, 6, 1, 30),
+(24, 8, 4, 31, 1000),
+(25, 9, 6, 1, 30),
+(26, 9, 7, 1, 20),
+(27, 9, 4, 3, 1000),
+(28, 10, 8, 1, 100),
+(29, 10, 6, 1, 30),
+(30, 10, 7, 1, 20),
+(31, 10, 4, 1, 1000),
+(32, 10, 9, 1, 8000),
+(33, 10, 10, 1, 80000),
+(34, 10, 11, 1, 333);
 
 -- --------------------------------------------------------
 
@@ -132,7 +146,10 @@ INSERT INTO `facturas` (`id_factura`, `numero_factura`, `fecha_factura`, `id_cli
 (4, 3, '2023-10-18 06:53:25', 2, 2, '1', '3630', 1),
 (6, 5, '2023-10-18 06:59:08', 3, 2, '4', '2637.8', 1),
 (7, 6, '2023-10-18 07:01:08', 4, 2, '1', '1391.5', 1),
-(8, 7, '2023-10-18 07:08:47', 4, 2, '4', '1367.3', 1);
+(8, 7, '2023-10-18 07:08:47', 4, 2, '4', '1367.3', 1),
+(9, 8, '2023-10-18 23:55:47', 3, 2, '1', '37546.3', 1),
+(10, 9, '2023-10-19 00:39:19', 3, 4, '1', '3690.5', 1),
+(11, 10, '2023-10-19 00:53:42', 3, 5, '4', '108274.43', 1);
 
 -- --------------------------------------------------------
 
@@ -184,7 +201,10 @@ INSERT INTO `products` (`id_producto`, `codigo_producto`, `nombre_producto`, `st
 (4, '1', 'Agua 20lt', 1, '2023-10-18 04:44:11', 1000),
 (7, '2', 'Soda 1lt', 1, '2023-10-18 04:47:17', 20),
 (6, '3', 'Soda 2lt', 1, '2023-10-18 04:44:48', 30),
-(8, '10', 'Bidon', 1, '2023-10-18 05:22:09', 100);
+(8, '10', 'Bidon', 1, '2023-10-18 05:22:09', 100),
+(9, '5', 'Dispenser análogo', 1, '2023-10-18 07:46:40', 8000),
+(10, '50', 'Dispenser eléctrico', 1, '2023-10-18 07:46:51', 80000),
+(11, '44', 'rrerw', 1, '2023-10-19 00:49:52', 333);
 
 -- --------------------------------------------------------
 
@@ -213,16 +233,22 @@ CREATE TABLE `users` (
   `user_name` varchar(64) NOT NULL COMMENT 'user''s name, unique',
   `user_password_hash` varchar(255) NOT NULL COMMENT 'user''s password in salted and hashed format',
   `user_email` varchar(64) NOT NULL COMMENT 'user''s email, unique',
-  `date_added` datetime NOT NULL
+  `date_added` datetime NOT NULL,
+  `rol` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='user data';
 
 --
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`user_id`, `firstname`, `lastname`, `user_name`, `user_password_hash`, `user_email`, `date_added`) VALUES
-(1, 'Admin', 'Admin', 'admin', '$2y$10$5Se56VWP29j9cN2L/enF5OBgiq9bszT0Z5dGAqudVlmLXFmpIEURq', 'admin@admin.com', '2016-05-21 15:06:00'),
-(2, 'Nahuel', 'Malich', 'user', '$2y$10$dMCxQASxZE13cETGV/VI..rHtSo88xyy8q6AubwrNsO4TSxsBDf.u', 'user@user.com', '2023-10-18 04:36:57');
+INSERT INTO `users` (`user_id`, `firstname`, `lastname`, `user_name`, `user_password_hash`, `user_email`, `date_added`, `rol`) VALUES
+(1, 'Admin', 'Admin', 'admin', '$2y$10$5Se56VWP29j9cN2L/enF5OBgiq9bszT0Z5dGAqudVlmLXFmpIEURq', 'admin@admin.com', '2016-05-21 15:06:00', 'admin'),
+(2, 'Nahuel', 'Malich', 'user', '$2y$10$EtiVSdCu5MqMQduC/spApOsqpdPQIeddtZl6PAeUabuUgck0v.VJ6', 'user@user.com', '2023-10-18 04:36:57', 'user'),
+(3, 'Facundo', 'Aires', 'aires', '$2y$10$YNZCsT/9GUqR3ix14zvn4OWiY/0ZVswE686/xB6eS7PQWpmotUf0K', 'aires@aires.com', '2023-10-18 23:57:01', 'user'),
+(4, 'fausto', 'gARCETE', 'FAUSTO', '$2y$10$pgZqJZFZCbKRYTN.nBf.ZeJER8PIo7ZQVdRSpXnPngZzzgOrqE8gS', 'fasuto@gmail.com', '2023-10-19 00:37:41', 'user'),
+(5, 'pepe', 'ipier', 'pepe', '$2y$10$u1p0wH1y/W.hcgZWeNOcnusrmQS77g3C38Cqil0WQ/K9icVTH/zS.', 'zszzsd@fs.com', '2023-10-19 00:51:13', 'user'),
+(6, 'leandro', 'villalba', 'leandro', '$2y$10$y2MtkILOi16Wm3dIl2seseXU2Zgk5ZOXJpLvxbD4K9bAsoBZMZm1u', 'leandro@leandro.com', '2023-10-19 22:03:58', 'user'),
+(7, 'jose', 'pepe', 'argento', '$2y$10$eHST4g3l9TkkhfI2TdebIOFDfQTk0Y5m/U0inqF8YwZfzpGrvjv1e', 'pepe@pepe.com', '2023-10-19 22:06:54', 'user');
 
 --
 -- Índices para tablas volcadas
@@ -290,7 +316,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `currencies`
@@ -302,13 +328,13 @@ ALTER TABLE `currencies`
 -- AUTO_INCREMENT de la tabla `detalle_factura`
 --
 ALTER TABLE `detalle_factura`
-  MODIFY `id_detalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_detalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT de la tabla `facturas`
 --
 ALTER TABLE `facturas`
-  MODIFY `id_factura` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_factura` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `perfil`
@@ -320,19 +346,19 @@ ALTER TABLE `perfil`
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `tmp`
 --
 ALTER TABLE `tmp`
-  MODIFY `id_tmp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id_tmp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'auto incrementing user_id of each user, unique index', AUTO_INCREMENT=3;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'auto incrementing user_id of each user, unique index', AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
