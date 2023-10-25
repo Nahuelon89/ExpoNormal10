@@ -1,5 +1,6 @@
 	<?php
   require('comunes.php');
+  
 		if (isset($nombre))
 		{
 	?>
@@ -22,10 +23,18 @@
         <li class="<?php echo $active_facturas;?>"><a href="facturas.php"><i class='glyphicon glyphicon-list-alt'></i> Facturas <span class="sr-only">(current)</span></a></li>
         <li class="<?php echo $active_productos;?>"><a href="productos.php"><i class='glyphicon glyphicon-barcode'></i> Productos</a></li>
 		<li class="<?php echo $active_clientes;?>"><a href="clientes.php"><i class='glyphicon glyphicon-user'></i> Clientes</a></li>
-		<li class="<?php echo $active_usuarios;?>"><a href="usuarios.php"><i  class='glyphicon glyphicon-lock'></i> Usuarios</a></li>
-		<li class="<?php if(isset($active_perfil)){echo $active_perfil;}?>"><a href="perfil.php"><i  class='glyphicon glyphicon-cog'></i> Configuración</a></li>
+		<?php 
+      if ($_SESSION['rol']=='admin'){
+        ?>
+        <li class="<?php echo $active_usuarios;?>"><a href="usuarios.php"><i  class="glyphicon glyphicon-lock"></i> Usuarios</a></li>
+        <li class="<?php if(isset($active_perfil)){echo $active_perfil;}?>"><a href="perfil.php"><i  class="glyphicon glyphicon-cog"></i> Configuración</a></li>
+      <?php
+      }
+      
+    ?>
        </ul>
-      <ul class="nav navbar-nav navbar-right">
+    
+       <ul class="nav navbar-nav navbar-right">
         <li><a href="mailto:nahuelindus@gmail.com" target='_blank'><i class='glyphicon glyphicon-envelope'></i> Soporte</a></li>
 		<li><a href="login.php?logout"><i class='glyphicon glyphicon-off'></i> Salir</a></li>
       </ul>

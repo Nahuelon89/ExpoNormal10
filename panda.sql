@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-10-2023 a las 22:55:39
+-- Tiempo de generación: 24-10-2023 a las 01:49:22
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -246,9 +246,7 @@ INSERT INTO `users` (`user_id`, `firstname`, `lastname`, `user_name`, `user_pass
 (2, 'Nahuel', 'Malich', 'user', '$2y$10$EtiVSdCu5MqMQduC/spApOsqpdPQIeddtZl6PAeUabuUgck0v.VJ6', 'user@user.com', '2023-10-18 04:36:57', 'user'),
 (3, 'Facundo', 'Aires', 'aires', '$2y$10$YNZCsT/9GUqR3ix14zvn4OWiY/0ZVswE686/xB6eS7PQWpmotUf0K', 'aires@aires.com', '2023-10-18 23:57:01', 'user'),
 (4, 'fausto', 'gARCETE', 'FAUSTO', '$2y$10$pgZqJZFZCbKRYTN.nBf.ZeJER8PIo7ZQVdRSpXnPngZzzgOrqE8gS', 'fasuto@gmail.com', '2023-10-19 00:37:41', 'user'),
-(5, 'pepe', 'ipier', 'pepe', '$2y$10$u1p0wH1y/W.hcgZWeNOcnusrmQS77g3C38Cqil0WQ/K9icVTH/zS.', 'zszzsd@fs.com', '2023-10-19 00:51:13', 'user'),
-(6, 'leandro', 'villalba', 'leandro', '$2y$10$y2MtkILOi16Wm3dIl2seseXU2Zgk5ZOXJpLvxbD4K9bAsoBZMZm1u', 'leandro@leandro.com', '2023-10-19 22:03:58', 'user'),
-(7, 'jose', 'pepe', 'argento', '$2y$10$eHST4g3l9TkkhfI2TdebIOFDfQTk0Y5m/U0inqF8YwZfzpGrvjv1e', 'pepe@pepe.com', '2023-10-19 22:06:54', 'user');
+(5, 'pepe', 'ipier', 'pepe', '$2y$10$u1p0wH1y/W.hcgZWeNOcnusrmQS77g3C38Cqil0WQ/K9icVTH/zS.', 'zszzsd@fs.com', '2023-10-19 00:51:13', 'user');
 
 --
 -- Índices para tablas volcadas
